@@ -280,6 +280,7 @@ header nav ul li a:hover{
 .story{
   position: relative;
 }
+/* story-animation---------- */
 .story-box-move{
   animation-name: move;
   animation-duration: 1.3s;
@@ -323,6 +324,7 @@ header nav ul li a:hover{
     transform: translateX(0%);
   }
 }
+/* story-animation---------- */
 .story-box-tit{
   position: absolute;
   top: -14.0rem;
@@ -375,12 +377,13 @@ header nav ul li a:hover{
   text-decoration: underline ;
 }
 /* ---story__commonicon--- */
-.story .page-container > .story-box-top{
+
+.story-box-top{
   height: 58.0rem;
   padding-top: 12.0rem;
   padding-left: 10.0rem;
 }
-.story .page-container > .story-box-top h3{
+.story-box-top h3{
   font-size: 3.0rem;
   font-weight: 300;
   line-height: 1.6;
@@ -418,6 +421,7 @@ header nav ul li a:hover{
 .story .page-container .story-box-c > .brand > img {
   height: 3.0rem;
   opacity: .7;
+  object-position: 50% 0%;
 }
 .story .page-container .story-box-1 > .brand > img {
   mix-blend-mode: difference;
@@ -715,14 +719,17 @@ header nav ul li a:hover{
   .story-box-3{
     height: 66.2vw;
   }
-  .story .page-container > .story-box-top,
+  .story-box-top,
   .story-box-bottom{
     height: 50vw;
-    padding-top: 10%;
+    padding-top: 8%;
     padding-left: 5%;
     transition: all .2s;
   }
-  .story .page-container > .story-box-top h3{
+  .story-box-bottom{
+    padding-left: 0;
+  }
+  .story-box-top h3{
     padding-bottom: 2rem;
   }
   
@@ -805,7 +812,7 @@ header nav ul li a:hover{
     font-size: 1.2rem;
     font-weight: 500;
   }
-  /* responsive-main-storys-1*/
+  /* responsive-main-storys-2*/
   .story .page-container > div{
     width: 100%;
   }
@@ -815,8 +822,7 @@ header nav ul li a:hover{
     height: 8rem;
     letter-spacing: 1px;
   }
-  .story .page-container .story-box-top,
-  .story-box-bottom{
+  .story-box-top{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -825,13 +831,10 @@ header nav ul li a:hover{
     height: 38rem;
     padding: 8rem 0 0 0;
     overflow: hidden;
-    
   }
-  .story .page-container .story-box-top h3,
-  .story-box-bottom p{
+  .story-box-top h3{
     padding-bottom: 5rem;
     width: 70vw;
-    line-height: 1.3;
   }
   .button-more-s{
     width: 70vw;
@@ -852,7 +855,6 @@ header nav ul li a:hover{
   }
   .story-box-bottom{
     order: 4;
-    padding-top: 6rem;
     height: 35rem;
   }
   .story-box-6{
@@ -924,9 +926,14 @@ header nav ul li a:hover{
 
 @media screen and (max-width: 450px) {
   /* responsive-main__story-3 */
-  .story .page-container .story-box-top h3{
+  .story-box-top h3{
     font-size: 2.6rem;
     width: 90vw;
+  }
+  .story-box-bottom p{
+    padding-top: 6rem;
+    font-size: 2.6rem;
+
   }
   .button-more-s{
     width: 80vw;

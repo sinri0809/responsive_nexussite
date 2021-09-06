@@ -6,8 +6,6 @@ window.onload = function () {
 
   $(window).scroll(function () {
 
-
-
     // 웹 브라우저 오른쪽의 스크롤 바의 위치를 파악한다. 
     var scY = $(window).scrollTop();
 
@@ -29,7 +27,6 @@ window.onload = function () {
       $('.story-button-more').addClass('story-box-right-to-mid');
     }
 
-
     // console.log(scY);
     if (scY >= 500) {
       $('.header').addClass('header-focus');
@@ -41,10 +38,10 @@ window.onload = function () {
       //   $('.header').removeClass('header-focus');
       // }
     } 
-
   });
 
   var swp_visual = new Swiper('.swp-visual', {
+    simulateTouch: false,
     direction: "vertical",
     loop: true,
     effect: 'fade',
@@ -62,6 +59,8 @@ window.onload = function () {
       clickable: true,
     }
   });
+  window.addEventListener('DOMMouseScroll', swp_visual, { passive: false });
+
 
   $('.swp-visual-pag').on('mouseover', function () {
     swp_visual.autoplay.stop();

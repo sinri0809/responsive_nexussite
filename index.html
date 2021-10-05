@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko" dir="ltr">
-  <!-- dir = left to right -->
-
 <head>
   <meta charset="utf-8">
-  <!-- prevent IE unmatch  -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  
-  <!-- favicon -->
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="apple-touch-icon-precomposed" href="images/favicon_180.png">
-
   <title>넥서스 플래그십 서울 갤러리 : Nexus Flagship Seoul Gallery</title>
-
   <!-- vendor prefix -->
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
   <![endif]-->
   <!-- <script src="js/prefixfree.min.js"></script> -->
   <script src="js/respond.min.js"></script> 
-  
   <!-- google icon -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
   <!-- swiper -->
   <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <script src="js/swiper/swiper.min.js"></script>
-  
-  <!-- my file must be last  -->
-  <!-- defer: html load가 끝나면 js읽어요. -->
-  <script defer type="text/javascript" src="js/jquery.min.js"></script>
-  <script defer type="text/javascript" src="js/script.js"></script>
-
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script defer type="text/javascript" src="js/jquery.min.js"></script>
+  <script defer type="text/javascript" src="js/waypoints.min.js"></script>
+  <script defer type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
-<div class="modal"></div>
-<div class="wrap">
+<!-- <div class="modal"></div> -->
+<div id="home" class="wrap">
   <!-- header -->
   <header class="header">
     <div class="page-container">
-      <a href="#" class="logo"></a>
+      <a href="#home" class="logo"></a>
       <span class="material-icons mi-apps">apps</span>
       <nav>
         <ul>
@@ -60,23 +49,22 @@
   <!-- main -->
   <main>
     <!-- visual -->
-    <article class="visual">
+    <section class="visual">
       <div class="swiper-container swp-visual">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="visual-container">
               <img src="images/main_1.jpg" alt="main-viaul-1">
               <div class="page-container">
-                <img src="images/img-nexus-logo.svg" alt="">
+                <img src="images/img-nexus-logo.svg" alt="nexus">
               </div>
             </div>
           </div>
-
           <div class="swiper-slide">
             <div class="visual-container">
               <img src="images/main_2.jpg" alt="main-viaul-2">
               <div class="page-container">
-                <img src="images/img-molteni-logo-2.svg" alt="">
+                <img src="images/img-molteni-logo-2.svg" alt="molteni">
               </div>
             </div>
           </div>
@@ -85,7 +73,7 @@
             <div class="visual-container">
               <img src="images/main_3.jpg" alt="main-viaul-3">
               <div class="page-container">
-                <img src="images/img-dada-logo-2.svg" alt="">
+                <img src="images/img-dada-logo-2.svg" alt="dada">
               </div>
             </div>
           </div>
@@ -94,7 +82,7 @@
             <div class="visual-container">
               <img src="images/main_4.jpg" alt="main-viaul-4">
               <div class="page-container">
-                <img src="images/img-gessi-logo-2.svg" alt="">
+                <img src="images/img-gessi-logo-2.svg" alt="gessi">
               </div>
             </div>
           </div>
@@ -102,7 +90,7 @@
             <div class="visual-container">
               <img src="images/main_5.jpg" alt="main-viaul-5">
               <div class="page-container">
-                <img src="images/img-fontana-logo-2.svg" alt="">
+                <img src="images/img-fontana-logo-2.svg" alt="fontana">
               </div>
             </div>
           </div>
@@ -115,22 +103,17 @@
             </div>
           </div>
         </div>
-
         <div class="page-container">
           <div class="swp-visual-pag"></div>
         </div>
-
       </div>
-    </article>
-
+    </section>
     <!-- story -->
     <article class="story">
       <div class="story-box-tit">
         <strong>OUR STORY</strong>
       </div>
-      
       <div class="page-container">
-
         <div class="story-box-top">
           <h3>
             인테리어에 대한 새로운 가치를<br>
@@ -184,7 +167,6 @@
             <img src="images/img-molteni-logo-2.svg" alt="brand molteni">
           </em>
         </div>
-
 
         <div class="story-box-bottom">
           <p>
@@ -276,7 +258,7 @@
 
   <!-- footer -->
   <footer class="footer">
-    <div class="footer--top">
+    <div class="footer-top">
       <div class="page-container">
         <a href="#" class="f-logo"></a>
         <dl>
@@ -295,7 +277,7 @@
       </div>
     </div>
 
-    <div class="footer--bottom">
+    <div class="footer-bottom">
       <ul class="page-container">
         <li><span>&#169;HANSSEM NEXUS 2020. All rights reserved</span></li>
         <li><a href="#" id="pri-state">개인정보취급방침</a></li>

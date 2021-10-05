@@ -2,33 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-/* scroll-bar design DELETE */
 html {
-  scrollbar-3dlight-color: #efefef;
-  scrollbar-arrow-color: #dfdfdf;
-  scrollbar-base-color: #efefef;
-  scrollbar-face-color: #dfdfdf;
-  scrollbar-track-color: #efefef;
-  scrollbar-darkshadow-color: #efefef;
-  scrollbar-highlight-color: #efefef;
-  scrollbar-shadow-color: #efefef;
   -ms-overflow-style: none;
   overflow: auto;
 }
-/* SCROLL */
 ::-webkit-scrollbar {
-  width: .0rem;
+  width: 0;
   height: 0;
 }
 /* ------------------------- */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline-style: none;
 }
 html {
-  /* rem standard unit */
   font-size: 10px;
   overflow-x: hidden;
 }
@@ -50,11 +39,10 @@ li {
 }
 body {
   font-family: 'Roboto', "Noto Sans KR", sans-serif;
-  /* font-family: "Noto Sans KR", sans-serif; */
-  color: #222;
   font-size: 1.2rem;
   line-height: 1;
   letter-spacing: 0;
+  color: #222;
 }
 /* ------------------------------- */
 .page-container{
@@ -78,7 +66,6 @@ body {
   background: rgba(255, 255, 255, 0.0);
   border-bottom: .05rem solid rgba(255, 255, 255, 0.3);
   /* min-width: 144.0rem; */
-
   z-index: 999999;
 }
 .header .page-container{
@@ -106,7 +93,6 @@ body {
 
   background: rgba(255, 255, 255, 0.9);
   border-bottom: .1rem solid #e4e4e4;
-  /* animation: .6s slidedown; */
   animation-name: slidedown;
   animation-duration: .6s;
 }
@@ -163,13 +149,10 @@ header nav ul li a:hover{
   border: none;
 }
 
-
 /* main */
-
 /* visual */
 .visual{
   width: 100%;
-  /* min-width: 144.0rem; */
   min-height: 100vh;
 }
 .visual .swp-visual{
@@ -543,7 +526,6 @@ header nav ul li a:hover{
 }
 /* //main */
 
-
 /* nexus brands */
 .brands{
   background: #141A29;
@@ -636,11 +618,11 @@ header nav ul li a:hover{
 .footer{
   background: #232C41;
 }
-.footer--top{
+.footer-top{
   position: relative;
   border-bottom: .1rem solid rgba(255, 255, 255, 0.2);
 }
-.footer--top .page-container {
+.footer-top .page-container {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -648,7 +630,7 @@ header nav ul li a:hover{
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-.footer--top .page-container > *{
+.footer-top .page-container > *{
   display: block;
   color: white;
 }
@@ -660,30 +642,30 @@ header nav ul li a:hover{
   background: url('../images/logo.png') no-repeat left;
   background-size: 15%;
 }
-.footer--top .page-container > dl{
+.footer-top .page-container > dl{
   flex: 1 5.0rem;
 }
-.footer--top .page-container dl *{
+.footer-top .page-container dl *{
   font-family: "Noto Sans KR", sans-serif;
   line-height: 1.6;
   font-weight: 100;
   color: rgba(255, 255, 255, 0.8);
 }
 /* bottom__footer */
-.footer--bottom .page-container{
+.footer-bottom .page-container{
   height: 100px;
   display: flex;
   align-items: center;
 }
-.footer--bottom .page-container li:first-child{
+.footer-bottom .page-container li:first-child{
   flex: 2;
   color: rgba(255, 255, 255, 0.8);
 }
-.footer--bottom .page-container li{
+.footer-bottom .page-container li{
   display: block;
   flex: 1 5.0rem;
 }
-.footer--bottom .page-container li a{
+.footer-bottom .page-container li a{
   font-family: "Noto Sans KR", sans-serif;
   line-height: 1.6;
   font-weight: 100;
@@ -691,7 +673,6 @@ header nav ul li a:hover{
 }
 
 /* responsive */
-
 @media screen and (max-width: 1440px) {
   /* responsive-main-visual */
   .visual .swp-visual{
@@ -707,7 +688,6 @@ header nav ul li a:hover{
     left: 0;
     transform: none;
   }
-
   /* responsive-main-storys-1*/
   .story-box-1, 
   .story-box-4, 
@@ -732,7 +712,6 @@ header nav ul li a:hover{
   .story-box-top h3{
     padding-bottom: 2rem;
   }
-  
   /* responsive-main-gallery-1 */
   .gallery .gallery-visual{
     background-attachment: scroll;
@@ -745,7 +724,6 @@ header nav ul li a:hover{
     flex-direction: column;
     padding: 10.0rem 0;
   }
-
   /* responsive-brands-1 */
   .brands .page-container{
     width: 80%;
@@ -882,7 +860,6 @@ header nav ul li a:hover{
   }
 }
 
-
 @media screen and (max-width:750px) {
   /* responsive-main-gallery-3 */
   .gallery .gallery-visual{
@@ -902,7 +879,7 @@ header nav ul li a:hover{
   }
 
   /* responsive-footer-2 */
-  .footer--top .page-container {
+  .footer-top .page-container {
     flex-direction: column;
     height: 350px;
     padding: 5rem 2rem;
@@ -912,10 +889,10 @@ header nav ul li a:hover{
     margin-left: 2rem;
     margin-bottom: 2rem;
   }
-  .footer--top .page-container > dl{
+  .footer-top .page-container > dl{
     padding-bottom: 2rem;
   }
-  .footer--bottom .page-container li{
+  .footer-bottom .page-container li{
     overflow: hidden;
   }
   #pri-state{
@@ -933,7 +910,6 @@ header nav ul li a:hover{
   .story-box-bottom p{
     padding-top: 6rem;
     font-size: 2.6rem;
-
   }
   .button-more-s{
     width: 80vw;
@@ -952,5 +928,4 @@ header nav ul li a:hover{
   .gallery-inf ul{
     padding: 5rem 0;
   }
-
 }

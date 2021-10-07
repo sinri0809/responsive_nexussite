@@ -2,14 +2,14 @@
 window.onload = function () {
   // first box
   $('.story-box-tit').addClass('story-box-move');
-
+  // another box
   let box_lst = $('.story > .page-container').find('div');
-  let box_lst_length = box_lst.length;
+  let box_lst_len = box_lst.length;
 
   // used waypoint js
   function moveBox(_obj, moveto) {
     let sentence = `story-box-${moveto}-to-mid`;
-    _obj.waypoint(function (dir) {
+    _obj.waypoint((dir) => {
       if (dir == 'down') {
         _obj.addClass(sentence);
       }
@@ -18,26 +18,23 @@ window.onload = function () {
     });
   }
   
-  function animateBox() {
-    for (let i=0; i < box_lst_length; i++){
-      let temp = box_lst.eq(i);
-      if (i % 2 == 0) {
-        moveBox(temp, 'right');
-      } else {
-        moveBox(temp, 'left')
-      }
+  for (let i=0; i < box_lst_len; i++){
+    let temp = box_lst.eq(i);
+    if (i % 2 == 0) {
+      moveBox(temp, 'right');
+    } else {
+      moveBox(temp, 'left')
     }
   }
   // visual-story box controll
-  animateBox();
 
-  $(window).scroll(function () {
-    let scY = $(window).scrollTop();
-    if (scY >= 500) {
+  window.addEventListener('scroll', () =>{
+    let sc_y = window.scrollY;
+    if(sc_y >= 500){
       $('.header').addClass('header-focus');
-    } else if (scY < 400) {
+    }else if(sc_y < 400){
       $('.header').removeClass('header-focus');
-    } 
+    }
   });
 
   let swp_visual = new Swiper('.swp-visual', {
@@ -59,9 +56,7 @@ window.onload = function () {
       clickable: true,
     }
   });
-
-  window.addEventListener('DOMMouseScroll', swp_visual, { passive: false });
-
+  // controll swiper
   $('.swp-visual-pag').on('mouseover', function () {
     swp_visual.autoplay.stop();
   });
@@ -75,14 +70,14 @@ window.onload = function () {
     aside_menu.css('right', '0');
   });
   $('.mi-c').click(function () {
-    aside_menu.css('right', '-25rem');
+    aside_menu.css('right', '-30%');
   });
 
   // when resizing window, aside menu is disappearing
   window.addEventListener('resize', function (e) {
     let win_width = window.innerWidth;
     if (win_width > 1024) {
-      aside_menu.css('right', '-25rem');
+      aside_menu.css('right', '-100%');
     }
   });
 }

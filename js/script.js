@@ -6,7 +6,7 @@ window.onload = function () {
   let box_lst = $('.story > .page-container').find('div');
   let box_lst_len = box_lst.length;
 
-  // used waypoint js
+  // used waypoint.js
   function moveBox(_obj, moveto) {
     let sentence = `story-box-${moveto}-to-mid`;
     _obj.waypoint((dir) => {
@@ -17,6 +17,8 @@ window.onload = function () {
       offset: "100%"
     });
   }
+
+
   
   for (let i=0; i < box_lst_len; i++){
     let temp = box_lst.eq(i);
@@ -67,17 +69,17 @@ window.onload = function () {
   // right aside toggle menu - responsive
   const aside_menu = $('.header nav ul');
   $('.mi-apps').click(function () {
-    aside_menu.css('right', '0');
+    aside_menu.css('transform', 'translateX(-100%)');
   });
   $('.mi-c').click(function () {
-    aside_menu.css('right', '-30%');
+    aside_menu.css('transform', 'translateX(0%)');
   });
 
   // when resizing window, aside menu is disappearing
   window.addEventListener('resize', function (e) {
     let win_width = window.innerWidth;
     if (win_width > 1024) {
-      aside_menu.css('right', '-100%');
+      aside_menu.css('transform', 'translateX(0%)');
     }
   });
 }

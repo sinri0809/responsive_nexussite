@@ -1,14 +1,62 @@
 'use strict';
-window.onload = function () {
-  // first box
-  $('.story-box-tit').addClass('story-box-move');
-  // another box
-  let box_lst = $('.story > .page-container').find('div');
-  let box_lst_len = box_lst.length;
+/**
+ * *ver 2022.02.02
+ * 수정 내용
+ * 1. 변수명 정리 및 제이쿼리 -> 바닐라 자바스크립트 & WEB api
+ * @boxAnimation : waypoint없이도 구현할 수 있도록 하기 
+ */
 
+
+window.onload = function () {
+
+  const boxAnimation = () => {
+    // First Box
+    document.querySelector('.story-box-tit').classList.add('story-box-move');
+    
+    // Another Boxs
+    const boxList = document.querySelectorAll('.story > .page-container > div');
+    const boxListLength = boxList.length;
+    
+    directDefine();
+    
+    window.addEventListener('', (event) => {
+      const boxs = document.querySelector('.story > .page-container');
+      console.log(boxs.clientHeight);
+      console.log(boxs.scrollHeight);
+      // console.log(boxs.style.height);
+    });
+
+  }
+  
+  // navigation bar event 
+  window.addEventListener('scroll', () =>{
+    const header = document.querySelector("header");
+    const scY = window.scrollY;
+
+    if(scY >= 500){
+      header.classList.add('header-focus');
+    }else if(scY < 400){
+      header.classList.remove('header-focus');
+    }
+
+  });
+
+  // when resizing window, aside menu is disappearing
+  window.addEventListener('resize', function (e) {
+    let win_width = window.innerWidth;
+    if (win_width > 1024) {
+      aside_menu.css('transform', 'translateX(0%)');
+    }
+  });
+
+  
+  const box_lst = $('.story > .page-container').find('div');
+  const box_lst_len = box_lst.length;
+  
   // used waypoint.js
   function moveBox(_obj, moveto) {
     let sentence = `story-box-${moveto}-to-mid`;
+
     _obj.waypoint((dir) => {
       if (dir == 'down') {
         _obj.addClass(sentence);
@@ -17,8 +65,6 @@ window.onload = function () {
       offset: "100%"
     });
   }
-
-
   
   for (let i=0; i < box_lst_len; i++){
     let temp = box_lst.eq(i);
@@ -30,14 +76,6 @@ window.onload = function () {
   }
   // visual-story box controll
 
-  window.addEventListener('scroll', () =>{
-    let sc_y = window.scrollY;
-    if(sc_y >= 500){
-      $('.header').addClass('header-focus');
-    }else if(sc_y < 400){
-      $('.header').removeClass('header-focus');
-    }
-  });
 
   let swp_visual = new Swiper('.swp-visual', {
     simulateTouch: false,
@@ -75,11 +113,4 @@ window.onload = function () {
     aside_menu.css('transform', 'translateX(0%)');
   });
 
-  // when resizing window, aside menu is disappearing
-  window.addEventListener('resize', function (e) {
-    let win_width = window.innerWidth;
-    if (win_width > 1024) {
-      aside_menu.css('transform', 'translateX(0%)');
-    }
-  });
 }
